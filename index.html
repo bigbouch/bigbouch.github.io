@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="Official website of BigBouch, an electronic music artist project owned and operated by Cody Boucher.">
+  <title>BigBouch | Official Website</title>
+  <style>
+    :root{
+      --bg:#050505;
+      --panel:#111;
+      --line:rgba(255,255,255,.13);
+      --text:#fff;
+      --muted:#b9b9c1;
+      --red:#ff1d25;
+      --red2:#8c0008;
+      --shadow:0 25px 90px rgba(0,0,0,.65);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 50% -10%, rgba(255,29,37,.25), transparent 34rem),
+        linear-gradient(180deg,#090909,#030303 70%);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1080px,calc(100% - 34px));margin:auto}
+    nav{
+      position:sticky;top:0;z-index:10;
+      background:rgba(5,5,5,.78);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid var(--line)
+    }
+    .nav-inner{
+      min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px
+    }
+    .brand{font-weight:1000;font-size:1.35rem;letter-spacing:-.045em}
+    .brand span{color:var(--red)}
+    .nav-btn,.button{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:50px;padding:0 20px;border-radius:13px;font-weight:850;
+      border:1px solid var(--line);background:rgba(255,255,255,.06)
+    }
+    .button.primary{
+      background:linear-gradient(100deg,var(--red2),var(--red));
+      border-color:transparent;box-shadow:0 14px 45px rgba(255,29,37,.25)
+    }
+    .hero{
+      min-height:calc(100vh - 72px);
+      display:grid;align-items:center;padding:66px 0
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center
+    }
+    .eyebrow{
+      color:#ff5c62;font-weight:900;letter-spacing:.18em;text-transform:uppercase;font-size:.78rem
+    }
+    h1{
+      font-size:clamp(4.2rem,11vw,8.5rem);
+      line-height:.83;letter-spacing:-.085em;margin:17px 0 22px;text-transform:uppercase
+    }
+    .hero p{color:var(--muted);font-size:1.12rem;line-height:1.7;max-width:650px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .art-shell{
+      position:relative;padding:15px;border-radius:32px;
+      background:linear-gradient(145deg,rgba(255,255,255,.15),rgba(255,255,255,.03));
+      border:1px solid var(--line);box-shadow:var(--shadow)
+    }
+    .art-shell:before{
+      content:"";position:absolute;inset:12%;background:var(--red);
+      filter:blur(75px);opacity:.18;z-index:-1
+    }
+    .art-shell img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:22px}
+    section{padding:85px 0}
+    .section-label{color:#ff5c62;font-size:.78rem;font-weight:900;letter-spacing:.17em;text-transform:uppercase}
+    h2{font-size:clamp(2.5rem,7vw,5rem);line-height:.95;letter-spacing:-.06em;margin:14px 0 20px}
+    .release{
+      display:grid;grid-template-columns:370px 1fr;gap:34px;
+      margin-top:34px;padding:25px;border:1px solid var(--line);
+      border-radius:27px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025))
+    }
+    .release img{width:100%;border-radius:19px}
+    .release-copy{display:flex;flex-direction:column;justify-content:center}
+    .release-copy h3{font-size:clamp(2.2rem,6vw,4.3rem);letter-spacing:-.06em;margin:8px 0 10px}
+    .release-copy p{color:var(--muted);line-height:1.7}
+    iframe{margin-top:20px}
+    .official{
+      display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:32px
+    }
+    .card{
+      border:1px solid var(--line);border-radius:22px;padding:28px;
+      background:rgba(255,255,255,.045)
+    }
+    .card h3{font-size:1.45rem;margin:0 0 12px}
+    .card p{color:var(--muted);line-height:1.7;margin:0}
+    .email{color:#ff676d;font-weight:800;word-break:break-word}
+    footer{border-top:1px solid var(--line);padding:34px 0 44px;color:#8f8f98}
+    @media(max-width:800px){
+      .hero-grid,.release,.official{grid-template-columns:1fr}
+      .hero{padding-top:45px}
+      .art-shell{order:-1}
+      .release{padding:17px}
+      h1{font-size:clamp(4rem,22vw,6.5rem)}
+      section{padding:68px 0}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a href="#top" class="brand">BIG<span>BOUCH</span></a>
+      <a class="nav-btn" href="#listen">Listen</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Official artist website</div>
+          <h1>Big<br>Bouch</h1>
+          <p>Hard-hitting electronic music built for workouts, late nights, heavy lifts, and full-volume energy.</p>
+          <div class="actions">
+            <a class="button primary" href="https://open.spotify.com/track/7tqNrqiKwGN5L6KFtmA3tz" target="_blank" rel="noopener">Play on Spotify</a>
+            <a class="button" href="#official">Artist information</a>
+          </div>
+        </div>
+        <div class="art-shell">
+          <img src="cover.jpg" alt="Born 4 This by BigBouch album artwork">
+        </div>
+      </div>
+    </section>
+
+    <section id="listen">
+      <div class="wrap">
+        <div class="section-label">Latest release</div>
+        <h2>Born 4 This</h2>
+        <div class="release">
+          <img src="cover.jpg" alt="Born 4 This cover artwork">
+          <div class="release-copy">
+            <div class="section-label">Out now</div>
+            <h3>Born 4 This</h3>
+            <p>A high-energy BigBouch release made for workouts, night drives, and the moment the drop finally hits.</p>
+            <a class="button primary" href="https://open.spotify.com/track/7tqNrqiKwGN5L6KFtmA3tz" target="_blank" rel="noopener">Listen on Spotify</a>
+            <iframe
+              style="border-radius:12px"
+              src="https://open.spotify.com/embed/track/7tqNrqiKwGN5L6KFtmA3tz?utm_source=generator"
+              width="100%"
+              height="152"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="official">
+      <div class="wrap">
+        <div class="section-label">Official information</div>
+        <h2>BigBouch is operated by Cody Boucher.</h2>
+        <div class="official">
+          <div class="card">
+            <h3>Ownership</h3>
+            <p><strong>BigBouch is an artist project owned and operated by Cody Boucher.</strong> This website is the official online home of the BigBouch artist project.</p>
+          </div>
+          <div class="card">
+            <h3>Artist & Management Contact</h3>
+            <p>For artist verification, management, collaboration, and business inquiries:</p>
+            <p style="margin-top:12px"><a class="email" href="mailto:codyboucher1@me.com">codyboucher1@me.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="year"></span> BigBouch. Official artist project of Cody Boucher.</div>
+  </footer>
+
+  <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
+</body>
+</html>

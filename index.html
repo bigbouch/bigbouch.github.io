@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07070b" />
+  <meta name="description" content="BigBouch — hard-hitting electronic music for workouts, late nights, and festival energy." />
+  <title>BigBouch | Official Website</title>
+  <style>
+    :root {
+      --bg: #07070b;
+      --panel: rgba(255,255,255,.07);
+      --panel-border: rgba(255,255,255,.14);
+      --text: #f8f8fb;
+      --muted: #aaa9b3;
+      --accent: #7657ff;
+      --accent-2: #13d8ff;
+      --accent-3: #ff3da8;
+      --shadow: 0 20px 80px rgba(0,0,0,.5);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(118,87,255,.20), transparent 36rem),
+        radial-gradient(circle at 85% 25%, rgba(19,216,255,.12), transparent 30rem),
+        radial-gradient(circle at 50% 90%, rgba(255,61,168,.10), transparent 32rem),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .16;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 34px));
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(7,7,11,.66);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-weight: 950;
+      letter-spacing: -.04em;
+      font-size: 1.35rem;
+    }
+
+    .brand span {
+      background: linear-gradient(90deg, var(--accent-2), var(--accent), var(--accent-3));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: .94rem; }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      place-items: center;
+      position: relative;
+      padding: 80px 0 70px;
+    }
+
+    .orb {
+      position: absolute;
+      width: 520px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      filter: blur(1px);
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.28), transparent 9%),
+        radial-gradient(circle at 45% 40%, rgba(19,216,255,.55), transparent 25%),
+        radial-gradient(circle at 60% 60%, rgba(118,87,255,.7), transparent 48%),
+        radial-gradient(circle at 65% 75%, rgba(255,61,168,.55), transparent 52%);
+      opacity: .34;
+      box-shadow: 0 0 140px rgba(118,87,255,.35);
+      animation: float 7s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-18px) scale(1.03); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border: 1px solid var(--panel-border);
+      background: rgba(255,255,255,.055);
+      border-radius: 999px;
+      color: #d7d6df;
+      font-size: .82rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 18px var(--accent-2);
+    }
+
+    h1 {
+      margin: 26px 0 14px;
+      font-size: clamp(4.6rem, 14vw, 10rem);
+      line-height: .82;
+      letter-spacing: -.085em;
+      font-weight: 1000;
+      text-transform: uppercase;
+      text-shadow: 0 8px 60px rgba(118,87,255,.22);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff 5%, #cfc5ff 40%, #b2f5ff 70%, #fff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #c6c4ce;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.65;
+    }
+
+    .cta-row {
+      margin-top: 31px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 22px;
+      border-radius: 14px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: linear-gradient(100deg, var(--accent), #9a56ff 48%, var(--accent-3));
+      box-shadow: 0 14px 46px rgba(118,87,255,.35);
+    }
+
+    .btn-secondary {
+      border-color: var(--panel-border);
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(12px);
+    }
+
+    section { padding: 90px 0; }
+
+    .section-label {
+      color: var(--accent-2);
+      font-size: .82rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(2.3rem, 6vw, 4.8rem);
+      line-height: .98;
+      margin: 0 0 18px;
+      letter-spacing: -.055em;
+    }
+
+    .lead {
+      color: var(--muted);
+      max-width: 700px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .release-card {
+      margin-top: 34px;
+      display: grid;
+      grid-template-columns: minmax(260px, 430px) 1fr;
+      gap: 36px;
+      padding: 24px;
+      border: 1px solid var(--panel-border);
+      border-radius: 28px;
+      background: linear-gradient(145deg, rgba(255,255,255,.095), rgba(255,255,255,.035));
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+    }
+
+    .cover {
+      aspect-ratio: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.12), transparent 40%),
+        radial-gradient(circle at 25% 25%, #13d8ff, transparent 22%),
+        radial-gradient(circle at 75% 25%, #ff3da8, transparent 22%),
+        radial-gradient(circle at 50% 75%, #7657ff, transparent 34%),
+        #0c0d16;
+    }
+
+    .cover::after {
+      content: "BIGBOUCH";
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-weight: 1000;
+      letter-spacing: -.07em;
+      transform: rotate(-6deg);
+      text-shadow: 0 10px 35px rgba(0,0,0,.55);
+    }
+
+    .release-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 14px 10px 14px 0;
+    }
+
+    .release-copy h3 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.055em;
+      margin: 0 0 12px;
+    }
+
+    .release-copy p { color: var(--muted); line-height: 1.7; }
+    .platforms { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+    .platform {
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--panel-border);
+      background: rgba(255,255,255,.055);
+      font-weight: 750;
+      font-size: .92rem;
+    }
+
+    .platform:hover { background: rgba(255,255,255,.1); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 34px;
+    }
+
+    .card {
+      min-height: 220px;
+      padding: 25px;
+      border: 1px solid var(--panel-border);
+      border-radius: 22px;
+      background: rgba(255,255,255,.05);
+      backdrop-filter: blur(12px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .card:hover { transform: translateY(-4px); background: rgba(255,255,255,.075); }
+    .card .icon { font-size: 2rem; margin-bottom: auto; }
+    .card h3 { margin: 0 0 7px; font-size: 1.25rem; }
+    .card p { margin: 0; color: var(--muted); line-height: 1.55; font-size: .95rem; }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .statement {
+      padding: 32px;
+      border-left: 3px solid var(--accent);
+      background: linear-gradient(90deg, rgba(118,87,255,.12), transparent);
+      border-radius: 0 22px 22px 0;
+      color: #e8e6ef;
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      line-height: 1.45;
+      font-weight: 750;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 34px 0 46px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 780px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .orb { width: 360px; }
+      .release-card, .about { grid-template-columns: 1fr; }
+      .release-copy { padding: 4px 3px 8px; }
+      .grid { grid-template-columns: 1fr; }
+      section { padding: 72px 0; }
+      h1 { font-size: clamp(4rem, 22vw, 6.5rem); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .orb { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">BIG<span>BOUCH</span></a>
+      <div class="nav-links">
+        <a href="#music">Music</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-secondary nav-cta" href="#music">Listen</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="orb" aria-hidden="true"></div>
+      <div class="wrap hero-content">
+        <div class="eyebrow"><span class="pulse"></span> New music incoming</div>
+        <h1 class="gradient-text">BigBouch</h1>
+        <p>Hard-hitting electronic music built for heavy lifts, fast runs, late nights, and festival-level energy.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#music">Listen now</a>
+          <a class="btn btn-secondary" href="#about">Enter the world</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="music">
+      <div class="wrap">
+        <div class="section-label">Latest release</div>
+        <h2>Turn it all the way up.</h2>
+        <p class="lead">Replace this section with your newest song title, cover artwork, and streaming links.</p>
+
+        <div class="release-card">
+          <div class="cover" aria-label="BigBouch placeholder album artwork"></div>
+          <div class="release-copy">
+            <div class="section-label">Out now</div>
+            <h3>Born 4 This</h3>
+            <p>A high-energy BigBouch track made for workouts, night drives, and the moment the drop finally hits.</p>
+            <div class="platforms">
+              <a class="platform" href="https://open.spotify.com/track/7tqNrqiKwGN5L6KFtmA3tz" target="_blank" rel="noopener">Spotify</a>
+              <a class="platform" href="#" target="_blank" rel="noopener">Apple Music</a>
+              <a class="platform" href="#" target="_blank" rel="noopener">YouTube</a>
+              <a class="platform" href="#" target="_blank" rel="noopener">Amazon Music</a>
+            </div>
+            <div style="margin-top:22px">
+              <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/track/7tqNrqiKwGN5L6KFtmA3tz?utm_source=generator"
+                width="100%"
+                height="152"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="icon">⚡</div>
+            <h3>Hard energy</h3>
+            <p>Big drops, aggressive low end, and music designed to move.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🏋️</div>
+            <h3>Workout ready</h3>
+            <p>Built for PR attempts, cardio sessions, and getting locked in.</p>
+          </article>
+          <article class="card">
+            <div class="icon">🌌</div>
+            <h3>After dark</h3>
+            <p>Festival atmosphere, neon moods, and late-night momentum.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about">
+        <div>
+          <div class="section-label">About BigBouch</div>
+          <h2>Music that hits before the caffeine does.</h2>
+          <p class="lead">BigBouch creates aggressive electronic music with one goal: make people feel stronger, faster, and more alive. Each track starts with a concept and is developed through a modern, AI-assisted production process focused on energy, emotion, and massive drops.</p>
+        </div>
+        <div class="statement">No filler. No waiting around. Just pressure, momentum, and the drop.</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-label">Connect</div>
+        <h2>Follow the noise.</h2>
+        <p class="lead">Add your real social links and booking email below.</p>
+        <div class="social-row">
+          <a class="btn btn-secondary" href="https://open.spotify.com/track/7tqNrqiKwGN5L6KFtmA3tz" target="_blank" rel="noopener">Spotify</a>
+          <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">Instagram</a>
+          <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">TikTok</a>
+          <a class="btn btn-secondary" href="#" target="_blank" rel="noopener">YouTube</a>
+          <a class="btn btn-secondary" href="mailto:booking@example.com">Booking / Collabs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <strong>BIGBOUCH</strong>
+      <span>© <span id="year"></span> BigBouch. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
